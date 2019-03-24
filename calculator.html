@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+   <title>Calculator using JavaScript
+   </title>
+   <style>
+   #table1{
+     padding:10px;
+	 border:1px solid black;
+	 background-color:black;
+	 border-radius:3px;
+   }
+   
+   .button,.buttonequ{
+      padding:5px;
+	  height:100%;
+	  width:100%;
+	  font-weight:bold;
+	  font-size:15px;
+      border-radius:3px;
+       background-color:#F5F5F5;
+	 border-color: #F5F5F5;
+   }
+  
+    .button:hover{
+      background-color:#DCDCDC;
+	 border-color: #DCDCDC;
+
+	}
+
+	.buttonequ:hover{
+       background-color:#FF8C00;
+	  border-color: #FF8C00;
+
+	}
+
+
+   .buttonequ{
+      
+      background-color:#FFA500;
+	  border-color: #FFA500;
+   }
+ 
+   .textbox{
+     font-size:15px;
+	 height:30px;
+	  font-weight:bold;
+   }
+   </style>
+
+   <script>
+    function insert(n)
+	{
+       form1.textbox.value=form1.textbox.value+n;
+     }
+
+	function equal()
+	{ var exp;
+	  var exp1;
+	  exp=form1.textbox.value;
+	  exp1=exp.substring(length-1,exp.length);
+      if(exp)
+         
+		/*{ 
+		 if(exp1 =='*'||exp1 =='+'||exp1 =='-')
+            form1.textbox.value="syntax error";
+	  else
+	    */
+	  form1.textbox.value=eval(exp);
+	    
+		
+	}
+     
+	function empty(){
+       form1.textbox.value=" ";
+
+	} 
+
+    function back(){
+      var exp1;
+	  exp1=form1.textbox.value;
+	  form1.textbox.value=exp1.substring(0,exp1.length-1);
+
+	}
+</script>
+</head>
+
+<body>
+<center>
+<h1>Calculator
+</h1>
+
+ <table id="table1">
+    <tr>
+	<td colspan="4"><form name="form1">
+    <input type="text" name="textbox" class="textbox">
+    </form>
+	</td>
+	</tr>
+	<tr><td><br></td>
+	</tr>
+   <tr>
+      <td>
+	  <input type="button" value="C" name="C" class="button" onclick="empty()" >
+	  </td>
+	  <td>
+	  <input type="button" value="<" name="backspace" class="button"onclick="back()">
+	  </td>
+	  <td>
+	  <input type="button" value="/" class="button" onclick="insert('/')">
+	  </td>
+	   <td>
+	  <input type="button" value="%" class="button" name="modu" onclick="insert('%')">
+	  </td>
+	  
+   </tr>
+   
+  <tr>
+      <td>
+	  <input type="button" value="7" class="button" onclick="insert(7)">
+	  </td>
+	  <td>
+	  <input type="button" value="8" class="button"name="eight" onclick="insert(8)">
+	  </td>
+	  <td>
+	  <input type="button" value="9" class="button"name="nine" onclick="insert(9)">
+	  </td>
+	  <td>
+	  <input type="button" value="*" class="button" name="mult" onclick="insert('*')">
+	  </td>
+	  
+	  
+   </tr>
+   <tr>
+      <td>
+	  <input type="button" value="4" class="button"name="four" onclick="insert(4)">
+	  </td>
+	  <td>
+	  <input type="button" value="5" class="button"name="five" onclick="insert(5)">
+	  </td>
+	  <td>
+	  <input type="button" value="6" class="button"name="six" onclick="insert(6)">
+	  </td>
+	  <td>
+	  <input type="button" value="-" class="button"name="sub" onclick="insert('-')">
+	  </td>
+	  
+   </tr>
+   <tr>
+      <td>
+	  <input type="button" value="1" class="button"name="one" onclick="insert(1)">
+	  </td>
+	  <td>
+	  <input type="button" value="2" class="button"name="two" onclick="insert(2)">
+	  </td>
+	  <td>
+	  <input type="button" value="3" class="button"name="three" onclick="insert(3)">
+	  </td>
+	  <td>
+	  <input type="button" value="+" class="button"name="add" onclick="insert('+')">
+	  </td>
+	 
+   </tr>
+   <tr>
+      <td colspan="2">
+	  <input type="button" value="0" class="button"name="zero" onclick="insert(0)">
+	  </td>
+	  <td>
+	  <input type="button" value="." class="button"name="point" onclick="insert('.')">
+	  </td>
+	  <td>
+	  <input type="button" value="=" class="buttonequ" name="equalto" onclick="equal()">
+	  </td>
+	</tr>
+  
+</table>
+</center>
+
+</body>
+</html>
