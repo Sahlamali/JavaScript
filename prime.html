@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<title>Prime or not using JavaScript
+</title>
+</head>
+<body>
+<h1>Prime in JavaScript  </h1>
+<script>
+var num,j;
+num=window.prompt("Enter the number:");
+parseInt(num);
+function prime()
+{
+var i=2;
+while(i<=num)
+{
+  if(num%i==0)
+    {  break;
+     }
+  i=i+1;
+
+}
+return i;
+}
+
+j=prime();
+if(j==num)
+{ document.write(num+" is a prime number");
+}
+else
+{
+ document.write(num+" is not a prime number");
+}
+</script>
+</body>
+</html>
