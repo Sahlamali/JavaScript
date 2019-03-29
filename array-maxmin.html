@@ -6,9 +6,7 @@
 </head>
 <body>
 <h1>Array using JavaScript</h1>
-
 <script>
-
 var num1,num2;
 var a,b;
 var array1=[];
@@ -20,23 +18,16 @@ num2=window.prompt("Enter the number of the array:");
 b=parseInt(num2);
 array1=array1.concat(b);
 }
-
-
 document.write("The array elements are");
-
-
 for( var k=0;k<array1.length;k++)
    {document.write("<BR>"+array1[k]);
     }
-
-
 var len=array1.length;
 var sum=0;
 function largest()
 { var len=array1.length;
   for( var i=0;i<array1.length;i++)
-       
-    {
+       {
       for( var j=0;j<array1.length;j++)
            {
               if(array1[j]<array1[j+1])
@@ -44,8 +35,7 @@ function largest()
                    array1[j]=array1[j+1];
 	               array1[j+1]=temp;
 	               } 
-              
-            }		   
+               }		   
     }
   
   return array1[0];
@@ -62,13 +52,11 @@ function smallest()
                    array1[j]=array1[j+1];
 	               array1[j+1]=temp;
 	               } 
-              
             }		   
     }
   
   return array1[0];
 }
-
 var large=largest();
 document.write("<br><br><br>"+"The largest number in the array is:"+large);
 var small=smallest();
@@ -78,13 +66,6 @@ for( var k=0;k<array1.length;k++)
     }
 document.write("<br><br><br>"+"The sum of number in the array is:"+sum);  
 document.write("<br><br><br>"+"The average of number in the array is:"+sum/len); 
-
-
-
 </script>
-
-
-
 </body>
-
 </html>
