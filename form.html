@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Register </title>
+<script>
+function validateForm() {
+  
+  
+  //Validation check for UserID
+  var x = document.forms["myForm"]["userid"].value;
+  if (x == "") {
+    alert("Enter the UserId ");
+    return false;
+	
+ }
+  
+  var j = x.length;
+  if (j < 4){
+    alert("Enter a valid UserId");
+	return false;
+   }
+   if (j > 12){
+    alert("Enter a valid UserId");
+	return false;
+   }
+   
+  //Validation check for password 
+  var y = document.forms["myForm"]["userpassword"].value;
+  if (y == "") {
+    alert("Enter the Password");
+    return false;
+  }
+   if (y.length < 7){
+    alert("Enter a valid Password");
+	return false;
+   }
+   
+   if (y.length >= 12){
+    alert("Enter a valid Password");
+	return false;
+   }
+   
+   
+   //check for password confirmation
+   var a = document.forms["myForm"]["userpassword1"].value;
+  if (a == "") {
+    alert("Enter the Confirmed Password");
+    return false;
+  }
+   if (a!=y){
+    alert("Password doesn't match");
+	return false;
+   }
+
+
+
+   //Validation check for UserName
+   var z = document.forms["myForm"]["username"].value;
+  if (z == "") {
+    alert("Enter the UserName ");
+    return false;
+  }
+   for(var q=0;q<z.length;q++){
+   if( !isNaN(z[q])){
+      alert("Enter the valid UserName");
+    return false;
+
+  }
+  }
+    
+    //Validation of ZIP Code
+	 var w = document.forms["myForm"]["usercode"].value;
+  if (w == "") {
+    alert("Enter the ZIP Code");
+    return false;
+  }
+
+  if( isNaN(w)){
+      alert("Enter the valid ZIP Code");
+    return false;
+
+  }
+  
+   
+    //Validation of E-mail
+	 var b = document.forms["myForm"]["useremail"].value;
+  if (b == "") {
+    alert("Enter the E-mail ID");
+    return false;
+  }
+
+  if( b.indexOf("@") <= 0){
+      alert("Enter the valid E-mail ID with @");
+    return false;
+    }
+	var d=0;
+   for(var q=0;q<b.length;q++){
+          if( b[q]=="."){
+		     i=q;
+			 d=1;
+		    }
+	    }
+   if (d==0)
+   { alert("Enter the valid E-mail ID with '.'");
+    return false;
+   }
+  if((b.charAt(b.length-5)!= '.')&&(b.charAt(b.length-4)!= '.')){
+  alert("Enter the valid E-mail ID with '.' at right position");
+    return false;
+  }
+
+  if(((b.charAt(b.length-5)== '.')||(b.charAt(b.length-4)== '.'))&&( b.indexOf("@") >= 0)) {
+    var i,j;
+	for(var q=0;q<b.length;q++){
+          if( b[q]=="@"){
+		     i=q;
+		    }
+	    }
+	for(var q=0;q<b.length;q++){
+          if( b[q]=="."){
+		     j=q;
+		    }
+	    }  
+
+	if(((j-i) !=6)&&((j-i) !=8))
+	 {
+        alert("Enter the valid E-mail ID");
+    return false;
+	  }
+
+	}
+ 
+}
+
+</script>
+
+<style>
+
+#table1{
+border: 1px solid black;
+border-radius:5px;
+padding:15px;
+box-shadow:0px 0px 5px 0px black;
+background-color: #E5E7E9  ;
+
+}
+
+body{
+
+background-color:#1ABC9C  ;
+
+}
+
+</style>
+</head>
+<body>
+ <center>
+   <h1>
+      Registration Form Validation Using JavaScript
+   </h1>
+ </center>
+ <br>
+ <center>
+ 
+
+<br>
+   <table id="table1">
+
+ <form id="myForm" onsubmit="return validateForm()" method="post">
+ <tr>
+  <th style="text-align:right;">  </th>
+  <th style="text-align:left;">   </th>
+ </tr>
+ <tr>
+  <td style="text-align:right;">
+    <!--UserId-->  
+    <label>User id:</label></td>
+  <td> <input type="text" name="userid" size="30" placeholder="Required and must be of length 5 to 12"></td>
+   </tr>
+   <tr>
+    <!--Password-->
+    <tr>
+    <td style="text-align:right;"><label>Password: </label></td>
+   <td><input type="password"  name="userpassword"  size="30" placeholder="Required and must be of length 7 to 12"></td>
+   </tr>
+    <tr>
+	 <!--Confirm Password-->
+    <tr>
+    <td style="text-align:right;"><label>Confirm Password: </label></td>
+   <td><input type="password"  name="userpassword1"  size="30" placeholder="Required and must be of length 7 to 12"></td>
+   </tr>
+    <tr>
+    <!--UserName-->
+	<tr>
+	<td style="text-align:right;"><label> Name: </label></td>
+   <td><input type="text" name="username" size="30" placeholder="Required and alphabets only"  ></td>
+   </tr>
+   <!--Address-->
+    <tr>
+	<td style="text-align:right;"><label for="address">Address:  </label></td>
+   <td><input type="text" id="address" name="useraddress" size="30" placeholder="Optional"></td>
+   </tr>
+   <!--Country selection-->
+   <tr>
+     <td style="text-align:right;"><label for="country">Country</label>
+	 </td>
+	     <td><select>
+		     <option value="country">(Please select a country)</option>
+		     <option value="India">India</option>
+			 <option value="China">China</option>
+			 <option value="Japan">Japan</option>
+			 <option value="Malaysia">Malaysia</option>
+			 <option value="Singapore">Singapore</option>
+			 <option value="Hong Kong">Hong Kong</option>
+			 <option value="USA">USA</option>
+		   </select>
+     </td>	 
+   </tr>
+   <!--ZIP code-->
+    <tr>
+	<td style="text-align:right;"><label for="zip">ZIP Code:</label></td>
+   <td><input type="text"  name="usercode" placeholder="Required" size="20"></td>
+   </tr>
+ <!--To enter the Email-->
+   <tr>
+	<td style="text-align:right;"><label for="mail">Email:  </label></td>
+   <td><input type="text" id="mail" name="useremail"  placeholder="Required and must be a valid email" size="30"></td>
+   </tr>
+  <!--Radio button for selecting the gender--> 
+   <tr>
+    <td style="text-align:right;"><label for="Gender">Gender:</label>
+	</td>
+	<td><input type="radio" id="Gender" name="gender" value="Male" >Male
+	    <input type="radio" id="Gender" name="gender" value="Female" >Female
+	</td>
+  </tr>
+   
+ <!--Checkbox for selecting the language-->
+  <tr>
+  <td style="text-align:right;">
+    <label for="language" > Language:</label>
+  </td>
+  <td>
+   
+    <input type="checkbox" id="language" value="English" checked >English
+    <input type="checkbox" id="language" value="Non-English" >Non-English
+  </td>
+  </tr>
+ <!--The about field  -->
+ 
+ <tr>
+ <td style="text-align:right;">
+    <label for="about">About:</label>
+</td>
+ <td>
+  <textarea id="about" rows="10" cols="30">
+  </textarea>
+ </td>
+ </tr>
+ <tr>
+ <td>
+ </td>
+ <td>
+ <input type="submit" form="myForm">
+  </td>
+  </tr> 
+ </form>
+<!--
+ <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+-->
+ 
+ 
+ 
+ </table> 
+</center>
+</body>
+
+</html>
