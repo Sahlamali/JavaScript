@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Temperature Converter </title>
+</head>
+
+<body>
+<script>
+document.write("<center><h1 style='color:blue'>" + "Temperature Converter </h1></center>"); 
+var a,b;
+document.write("For Celsius to Fareheit convertion &nbsp"); 
+document.write("<button onclick = farenheit() style='background-color:black;color:white;'> Click Here" + "</button>"); 
+
+document.write("<br><br>For Farenheit to Celsius convertion &nbsp"); 
+document.write("<button onclick = celsius() style='background-color:black;color:white;'> Click Here" + "</button>"); 
+
+
+
+//Celsius to Farenheit converter
+function celsius(){
+var c,d;
+a=window.prompt("Enter the temperature in Farenheit :");
+c= a-32;
+d= 5/9*c;
+window.alert("The temperature in Celsius :"+ d);
+}
+
+//Farenheit to Celsius convertion
+function farenheit(){
+var c,d;
+a=window.prompt("Enter the temperature in Celsius :");
+c= a*9/5;
+d= c+32;
+window.alert("The temperature in Farenheit :"+d);
+}
+
+</script>
+</body>
+</html>
