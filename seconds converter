@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Seconds converter
+</title>
+<style>
+#qwerty{
+font-weight:bold;
+}
+
+#design{
+font-weight:bold;
+color:blue;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+var a,s,b,c,d,e,f,g,h,i;
+document.write("<center><h1>Seconds converter</h1></center>");
+a=window.prompt("Enter the time in seconds:");
+b=a/3600;
+c=parseInt(b);//Hours
+d=a-c*3600;
+e=d/60;
+f=parseInt(e);//minutes
+g=d-f*60;
+parseInt(g);
+document.write("<span id='qwerty'>"+"The time in HR:MIN:SEC format is:"+"</span>");
+document.write("<span id='design'>"+c+":"+f+":"+g+"</span>");
+</script>
+
+</body>
+
+</html>
